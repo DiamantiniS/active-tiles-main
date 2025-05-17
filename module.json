@@ -50,21 +50,14 @@
       "private": false
     }
   ],
-  "esmodules": [
-    "monks-active-tiles.js",
-    "settings.js"
-  ],
-  "scripts": [
-    "js/jquery.typeahead.min.js"
-  ],
-  "styles": [
-    "css/monks-active-tiles.css"
-  ],
-  "url": "https://github.com/ironmonk88/monks-active-tiles",
-  "download": "https://github.com/ironmonk88/monks-active-tiles/archive/12.02.zip",
-  "manifest": "https://github.com/ironmonk88/monks-active-tiles/releases/latest/download/module.json",
-  "bugs": "https://github.com/ironmonk88/monks-active-tiles/issues",
-  "id": "monks-active-tiles",
+  "esmodules": ["monks-active-tiles.js", "settings.js"],
+  "scripts": ["js/jquery.typeahead.min.js"],
+  "styles": ["css/monks-active-tiles.css"],
+  "url": "https://github.com/DiamantiniS/active-tiles-main",
+  "download": "https://github.com/DiamantiniS/active-tiles-main/archive/refs/heads/main.zip",
+  "manifest": "https://raw.githubusercontent.com/DiamantiniS/active-tiles-main/main/module.json",
+  "bugs": "https://github.com/DiamantiniS/active-tiles-main/issues",
+  "id": "active-tiles",
   "compatibility": {
     "minimum": "12",
     "verified": "13"
