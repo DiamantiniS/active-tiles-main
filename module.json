@@ -1,5 +1,6 @@
 {
   "title": "Monk's Active Tile Triggers",
+  "description": "Fork modificato per compatibilità Foundry VTT v13. Basato su Monk's Active Tile Triggers di IronMonk",
   "version": "12.02",
   "authors": [
     {
