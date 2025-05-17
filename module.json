@@ -55,7 +55,7 @@
   "styles": ["css/monks-active-tiles.css"],
   "url": "https://github.com/DiamantiniS/active-tiles-main",
   "download": "https://github.com/DiamantiniS/active-tiles-main/archive/refs/heads/main.zip",
-  "manifest": "https://raw.githubusercontent.com/DiamantiniS/active-tiles-main/main/module.json",
+  "manifest": "https://github.com/DiamantiniS/active-tiles-main/main/module.json",
   "bugs": "https://github.com/DiamantiniS/active-tiles-main/issues",
   "id": "active-tiles",
   "compatibility": {
