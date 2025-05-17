@@ -2263,27 +2263,31 @@ export class MonksActiveTiles {
             return wrapped(...args);
         });
 
-        patchFunc("foundry.applications.elements.HTMLStringTagsElement.prototype.constructor.renderTag", function (wrapped, ...args) {
+        patchFunc(
+          "foundry.applications.elements.HTMLStringTagsElement.prototype.constructor.renderTag",
+          async function (wrapped, ...args) {
             let [tag, label] = args;
             if (tag.includes(".Tile.") && !label) {
-                try {
-                    let document = await fromUuid(tag) /* TODO: assicurati che questa funzione sia async */;
-                    if (document) {
-                        if (game.modules.get('tagger')?.active) {
-                            let tags = Tagger.getTags(document);
-                            if (tags.length)
-                                name = tags[0];
-                        }
+              try {
+                let document = await fromUuid(tag); // ✅ Ora è OK
+                if (document) {
+                  let name;
+                  if (game.modules.get("tagger")?.active) {
+                    let tags = Tagger.getTags(document);
+                    if (tags.length) name = tags[0];
+                  }
+                  if (!name) name = document.documentName + ": " + document.id;
 
-                        if (!name)
-                            name = document.documentName + ": " + document.id;
-
-                        args[1] = name;
-                    }
-                } catch { }
+                  args[1] = name;
+                }
+              } catch (e) {
+                console.warn("Failed to resolve tag name:", e);
+              }
             }
             return wrapped(...args);
-        }, "MIXED");
+          },
+          "MIXED"
+        );
 
 
         //@Tile[Scene.b77ocyto1VdgAZU5.Tile.QW3oZo39pZsf8cTX landing:test1]{Journal Click Tile}
